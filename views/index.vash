@@ -1,0 +1,22 @@
+@html.extend('layout', function(model) {
+    @( model.title = 'Index' )
+
+    @html.block('content', function(model) {
+        <button id="populate-users">Populate Users</button>
+
+        <table id="table-users">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Full Name</th>
+                </tr>
+            </thead>
+
+            <tbody id="table-users-body">
+                <tr></tr>
+            </tbody>
+        </table>
+
+        <p id="error-message">Error fetching users</p>
+    })
+})
