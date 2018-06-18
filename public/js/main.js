@@ -29,7 +29,7 @@ $(function () {
 					 
 				for( var i=0; i<num_rows;i++){
 					tbody += '<tr>';
-					for( var j=0; j<	num_cols;j++){
+					for( var j=0; j<num_cols;j++){
                         
 							tbody += '<td>';
 							tbody += 'user.username ' + i + '' + j;
