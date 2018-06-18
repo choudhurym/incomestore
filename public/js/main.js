@@ -22,6 +22,26 @@ $(function () {
                 /**
                  * Add the users to the table
                  */
+                var num_rows = document.getElementById('table-users-body').value;
+				var num_cols = document.getElementById('table-users-body').value; 
+				var thead = '<table border="1">\n';
+				var tbody = '';
+					 
+				for( var i=0; i<num_rows;i++){
+					tbody += '<tr>';
+					for( var j=0; j<	num_cols;j++){
+                        
+							tbody += '<td>';
+							tbody += 'user.username ' + i + '' + j;
+							tbody += '</td>'
+							tbody += '<td>';
+							tbody += 'user.firstname ' + '' + 'user.lastname' ;
+							tbody += '</td>'
+						}
+						tbody += '</tr>\n';
+					}
+					var tfooter = '</table>';
+					document.getElementById('table-users').innerHTML = thead + tbody + tfooter;
 
                 $('#table-users').show();
             })
