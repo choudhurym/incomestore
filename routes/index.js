@@ -20,6 +20,22 @@ router.get('/api/users', async (req, res, next) => {
      *    back (if necessary).
      * 3. On error, send a 400 status back to the client.
      */
+    var message;
+	message = document.getElementById("populate-users");
+    message.innerHTML = "";
+    res = document.getElementById("table-users").value;
+	try{
+		if(res == "") throw "is empty"; 
+		x = Users.getUsersAsync(res);
+		if(x == "Username"){
+			var myJSON = JSON.stringify(x);
+			window.location = "Users.js ? x=" + myJSON;
+		}throw "does not exist";
+	 }
+	 catch(err)
+	 {
+		message.innerHTML = "404: Page not found" + err;	 
+	 }
 
     // Get the list of users
     const users = await Users.getUsersAsync();
